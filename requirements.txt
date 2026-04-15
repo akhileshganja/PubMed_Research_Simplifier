@@ -1,0 +1,70 @@
+# Core NLP - SciSpacy for biomedical text processing
+scispacy>=0.5.3
+spacy>=3.7.0
+https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_lg-0.5.4.tar.gz
+https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_bc5cdr_md-0.5.4.tar.gz
+https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_ner_jnlpba_md-0.5.4.tar.gz
+
+# BioNLP Tools
+bioc>=2.0
+
+# Transformers & Deep Learning
+transformers>=4.35.0
+torch>=2.1.0
+sentence-transformers>=2.2.2
+accelerate>=0.24.0
+
+# Topic Modeling
+bertopic>=0.15.0
+scikit-learn>=1.3.0
+
+# Summarization & Keyphrase Extraction
+sumy>=0.11.0
+keybert>=0.8.3
+textrank4keyword>=1.0.0
+rouge-score>=0.1.2
+
+# NLI for Contradiction Detection
+nltk>=3.8.1
+
+# Data Processing
+pandas>=2.1.0
+numpy>=1.24.0
+requests>=2.31.0
+xmltodict>=0.13.0
+lxml>=4.9.0
+
+# Backend API
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+python-multipart>=0.0.6
+
+# Database
+pymongo>=4.6.0
+sqlalchemy>=2.0.0
+alembic>=1.12.0
+
+# Vector Store for RAG
+chromadb>=0.4.15
+
+# Text Processing
+beautifulsoup4>=4.12.0
+ftfy>=6.1.0
+tqdm>=4.66.0
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.17.0
+wordcloud>=1.9.0
+
+# Evaluation
+seqeval>=1.2.2
+sacrebleu>=2.3.0
+
+# Utilities
+python-dotenv>=1.0.0
+pydantic-settings>=2.1.0
+tenacity>=8.2.0
+ratelimit>=2.2.1

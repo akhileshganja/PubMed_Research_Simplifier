@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PubMed Research Simplifier</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="container">
+                <h1>🔬 PubMed Research Simplifier</h1>
+                <p class="subtitle">AI-powered biomedical literature analysis</p>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="container">
+                <!-- Search Section -->
+                <section class="search-section">
+                    <div class="search-box">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="Enter medical topic (e.g., 'metformin diabetes treatment')..."
+                            autocomplete="off"
+                        >
+                        <div class="search-options">
+                            <select id="userType">
+                                <option value="patient">Patient (Simple)</option>
+                                <option value="student">Student (Moderate)</option>
+                                <option value="doctor">Doctor (Technical)</option>
+                            </select>
+                            <select id="maxArticles">
+                                <option value="20">20 articles</option>
+                                <option value="30" selected>30 articles</option>
+                                <option value="50">50 articles</option>
+                            </select>
+                            <button id="searchBtn" class="btn-primary">
+                                <span class="btn-text">Analyze</span>
+                                <span class="btn-loader" style="display: none;">Analyzing...</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- QA Section -->
+                <section class="qa-section">
+                    <div class="qa-box">
+                        <input 
+                            type="text" 
+                            id="qaInput" 
+                            placeholder="Ask a specific question about the research..."
+                            autocomplete="off"
+                        >
+                        <button id="qaBtn" class="btn-secondary">Ask AI</button>
+                    </div>
+                </section>
+
+                <!-- Loading State -->
+                <div id="loadingState" class="loading-state" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Analyzing biomedical literature...</p>
+                    <div class="progress-steps">
+                        <div class="step" data-step="1">📚 Retrieving articles</div>
+                        <div class="step" data-step="2">🔬 Extracting entities</div>
+                        <div class="step" data-step="3">🔗 Finding relations</div>
+                        <div class="step" data-step="4">📝 Summarizing</div>
+                        <div class="step" data-step="5">📊 Generating insights</div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <section id="resultsSection" class="results-section" style="display: none;">
+                    
+                    <!-- Summary Card -->
+                    <div class="card summary-card">
+                        <h2>📋 Research Summary</h2>
+                        <div id="summaryContent" class="summary-content"></div>
+                        <div id="keyPoints" class="key-points"></div>
+                    </div>
+
+                    <!-- Personalized Output -->
+                    <div class="card personalized-card">
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="patient">👤 Patient</button>
+                            <button class="tab-btn" data-tab="student">🎓 Student</button>
+                            <button class="tab-btn" data-tab="doctor">👨‍⚕️ Doctor</button>
+                        </div>
+                        <div id="personalizedContent" class="personalized-content"></div>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value" id="articleCount">-</div>
+                            <div class="stat-label">Articles Analyzed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="entityCount">-</div>
+                            <div class="stat-label">Entities Found</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="trendIndicator">-</div>
+                            <div class="stat-label">Research Trend</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="evidenceLevel">-</div>
+                            <div class="stat-label">Evidence Quality</div>
+                        </div>
+                    </div>
+
+                    <!-- Two Column Layout -->
+                    <div class="two-column">
+                        <!-- Entities & Relations -->
+                        <div class="card">
+                            <h3>🏷️ Key Entities</h3>
+                            <div id="entitiesList" class="entities-list"></div>
+                            
+                            <h3 style="margin-top: 1.5rem;">🔗 Relations</h3>
+                            <div id="relationsList" class="relations-list"></div>
+                        </div>
+
+                        <!-- Risk Factors & Insights -->
+                        <div class="card">
+                            <h3>⚠️ Risk Factors</h3>
+                            <div id="riskFactorsList" class="risk-list"></div>
+                            
+                            <h3 style="margin-top: 1.5rem;">💡 Key Insights</h3>
+                            <div id="insightsList" class="insights-list"></div>
+                        </div>
+                    </div>
+
+                    <!-- Articles List -->
+                    <div class="card articles-card">
+                        <h3>📄 Source Articles</h3>
+                        <div id="articlesList" class="articles-list"></div>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <p>Built with SciSpacy, Transformers, and domain-specific NLP models</p>
+                <p class="disclaimer">⚠️ This tool is for research purposes only. Always consult healthcare professionals for medical decisions.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
