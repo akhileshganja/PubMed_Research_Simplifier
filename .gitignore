@@ -31,3 +31,7 @@ Thumbs.db
 .env.copy.old
 .env.copy.new
 .env.copy.copy
+
+frontend/node_modules/
+frontend/build/
+frontend/dist/  
