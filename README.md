@@ -325,3 +325,5 @@ When discussing this project:
 4. **Contradiction awareness**: "The system detects conflicting findings across papers, which is critical in biomedical research"
 
 5. **Multi-audience**: "Personalization layer adapts the same research findings for patients, students, or doctors"
+#   P u b M e d _ R e a s e a c h _ S i m p l i f i e r  
+ 
